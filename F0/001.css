@@ -29,7 +29,7 @@ input{
   background-image: url(bk.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 1920px;
+  background-size: 1600px;
   background-position:  center top;
 }
 #main{
@@ -44,7 +44,7 @@ input{
 #foot{
 
 }
-#submit{
+.submit{
   height: 60px;
   width: 170px;
   background-color: rgba(0,0,0,0.5);
@@ -52,12 +52,16 @@ input{
   letter-spacing: 0px;
   border-radius: 10px;
 }
+#login{
+  margin-left:200px;
+}
 #see{
   margin-left: -45px;
   height: 40px;
+  margin-bottom: 22px;
   width: 40px;
-  padding-top: 36px;
-  vertical-align: top;
+  vertical-align: bottom;
+  cursor: pointer;
 }
 #checkboxline{
   line-height: 32px;

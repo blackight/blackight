@@ -1,8 +1,17 @@
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>log in</title>
+  <script>
+    function seepsd(){
+      if(document.getElementById("psd").type=="text"){
+        document.getElementById("psd").type="password"
+      }else if(document.getElementById("psd").type=="password"){
+        document.getElementById("psd").type="text";
+      };
+    }
+  </script>
   <link rel="stylesheet" type="text/css" href="001.css">
 </head>
 <body>
@@ -12,14 +21,13 @@
       </div>
       <div id="foot">
         <form>
-          user name : <input type="text" size="20" name="user"/><br/>
-          password : <input type="password" size="20" name="psd"/><img id="see" src="see.png"/>
+          user name : <input type="text" size="20" name="user" required="required"/><br/>
+          password : <input id="psd" type="password" size="20" name="psd"/ required="required"><img id="see" onclick="seepsd()" src="see.png"/>
           <p id="checkboxline"><input id="checkbox" type="checkbox" name="rememberpassword" value="">remember password</p>
-          <input id="submit" type="submit" name="submit" value="submit" />
+          <input class="submit" type="submit" name="submit" value="register" /><input id="login" class="submit" type="submit" name="submit" value="login" />
         </form>
       </div>
     </div>
   </div>
-
 </body>
 </html>
