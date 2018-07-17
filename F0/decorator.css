@@ -12,7 +12,7 @@ html{
 body{
   height:100%;
   margin: 0px;
-  background-image: url(bb.png);
+  background-image: url(bk2.png);
   background-repeat: repeat-x;
   background-size: auto 100%;
 }
@@ -26,7 +26,7 @@ input{
 #container {
   height: 100%;
   width: 100%;
-  background-image: url(bk.jpg);
+  background-image: url(bk1.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 1600px;
