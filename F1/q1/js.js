@@ -1,0 +1,34 @@
+$(document).ready(function(){
+  $("#float").mouseenter(function(){
+    $("#img2").animate({padding:'20px'},80);
+  });
+});
+$(document).ready(function(){
+  $("#float").mouseleave(function(){
+    $("#img2").animate({padding:'10px'},80);
+  });
+});
+$(document).ready(function(){
+  $("#en1").focus(function(){
+    $("#lb1").animate({left:'0px',fontSize:'1em',top:"0px"},200);
+  });
+});
+$(document).ready(function(){
+  $("#en1").blur(function(){
+    if(document.getElementById("en1").value==""){
+      $("#lb1").animate({left:'4px',fontSize:'1.2em',top:"33px"},200);
+    }
+  });
+});
+$(document).ready(function(){
+  $("#en2").focus(function(){
+    $("#lb2").animate({left:'0px',fontSize:'1em',top:"0px"},200);
+  });
+});
+$(document).ready(function(){
+  $("#en2").blur(function(){
+    if(document.getElementById("en2").value==""){
+      $("#lb2").animate({left:'4px',fontSize:'1.2em',top:"33px"},200);
+    }
+  });
+});

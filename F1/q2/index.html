@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width,
+                                       initial-scale=1.0,
+                                       maximum-scale=1.0,
+                                       user-scalable=no" charset="utf-8">
+    <title>question2</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css.css">
+  </head>
+  <body>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-9 col-sm-6 col-xs-offset-2 col-sm-offset-3">
+            <form role="form" action="index.html" method="post">
+              <div class="form-group">
+                number:<input class="form-control enter" type="text" name="number" value="" id="number"/>
+              </div>
+              <input type="button" name="" value="新建/更改" onclick="save()"/>
+              <input type="button" name="" value="删除" onclick="delete1()"/>
+              <button type="button" name="button" onclick="find()">search</button>
+              <div class="form-group">name: <input class="form-control enter" type="text" name="name" value="" id="name"/></div>
+              <div class="form-group">sex:<input class="form-control enter" type="text" name="sex" value="" id="sex"/></div>
+              <div class="form-group">grade: <input class="form-control enter" type="text" name="grade" value="" id="grade"/></div>
+              <div class="form-group">speciality: <input class="form-control enter" type="text" name="speciality" value="" id="speciality"/></div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
