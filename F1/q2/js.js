@@ -7,8 +7,13 @@ function save() {
     }
     localStorage.setItem(document.getElementById('number').value,JSON.stringify(temp));
     if(a){
-      alert("储存成功");
-    }else alert("更改成功");
+      alert("储存成功\n学号： "+temp.number+"\n姓名： "+temp.name+"\n性别： "+temp.sex+"\n年级： "+temp.grade+"\n专业： "+temp.speciality);
+    }else alert("更改成功\n学号： "+temp.number+"\n姓名： "+temp.name+"\n性别： "+temp.sex+"\n年级： "+temp.grade+"\n专业： "+temp.speciality);
+    document.getElementById('name').value="";
+    document.getElementById('sex').value="";
+    document.getElementById('number').value="";
+    document.getElementById('grade').value="";
+    document.getElementById('speciality').value="";
   }else {
     alert("你不支持本地储存");
   }
@@ -21,6 +26,11 @@ function delete1() {
     if(temp!==null){
       localStorage.removeItem(document.getElementById('number').value);
       alert("删除成功");
+      document.getElementById('name').value="";
+      document.getElementById('sex').value="";
+      document.getElementById('number').value="";
+      document.getElementById('grade').value="";
+      document.getElementById('speciality').value="";
     }else{
       alert("查无此人");
     }
