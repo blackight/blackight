@@ -1,0 +1,16 @@
+{
+  "name": "f2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js.js",
+  "dependencies": {
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.21.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
