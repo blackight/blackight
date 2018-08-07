@@ -1,10 +1,13 @@
 require("!style-loader!css-loader!./css.css");
+
 function getNum(obj ,str){
    return parseInt(window.getComputedStyle(obj)[str]);
 }
 
 var timespace=5000;
 var timechange=500;
+var startX=0;
+var startY=0;
 
 var carousels=document.getElementsByClassName("carousel");
 for (var i = 0; i < carousels.length; i++) {
@@ -17,6 +20,17 @@ for (var i = 0; i < carousels.length; i++) {
     contents[j].style.left=(j*spacex)/getNum(carousels[i],"width")*100+"%";
     contents[j].style.top=(j*spacey)/getNum(carousels[i],"height")*100+"%";
     contents[j].style.zIndex=j;
+    contents[j].addEventListener('touchstart',
+    function (e) {
+      startX=e.targetTouches[0].pageX;
+      startY=e.targetTouches[0].pageY;
+    });
+    contents[j].addEventListener('touchend',
+    function (e) {
+      if(e.changedTouches[0].pageX-startX>50||e.changedTouches[0].pageY-startY>50){
+        divChanges(timechange);
+      }
+    });
   }
 }
 
@@ -67,8 +81,8 @@ function divChanges(time){
   }
 }
 
+var timer=setInterval(startAChange,timespace);
+
 function startAChange(){
   divChanges(timechange);
 }
-
-var timer=setInterval(startAChange,timespace);
