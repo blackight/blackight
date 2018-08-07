@@ -29,6 +29,8 @@ for (var i = 0; i < carousels.length; i++) {
     function (e) {
       if(e.changedTouches[0].pageX-startX>50||e.changedTouches[0].pageY-startY>50){
         divChanges(timechange);
+        clearInterval(timer);
+        timer=setInterval(startAChange,timespace);
       }
     });
   }
