@@ -12,6 +12,21 @@ var startY=0;
 var carousels=document.getElementsByClassName("carousel");
 for (var i = 0; i < carousels.length; i++) {
   var contents=carousels[i].getElementsByClassName("content");
+  carousels[i].addEventListener('touchstart',
+  function (e) {
+    e.preventDefault();
+    startX=e.targetTouches[0].pageX;
+    startY=e.targetTouches[0].pageY;
+  });
+  carousels[i].addEventListener('touchend',
+  function (e) {
+    if(e.changedTouches[0].pageX-startX>50||e.changedTouches[0].pageY-startY>50){
+      divChanges(timechange);
+      clearInterval(timer);
+      timer=setInterval(startAChange,timespace);
+      e.preventDefault();
+    }
+  });
   if(contents[0]){
     var spacex=(getNum(carousels[i],"width")-getNum(contents[0],"width"))/(contents.length-1);
     var spacey=(getNum(carousels[i],"height")-getNum(contents[0],"height"))/(contents.length-1);
@@ -20,19 +35,6 @@ for (var i = 0; i < carousels.length; i++) {
     contents[j].style.left=(j*spacex)/getNum(carousels[i],"width")*100+"%";
     contents[j].style.top=(j*spacey)/getNum(carousels[i],"height")*100+"%";
     contents[j].style.zIndex=j;
-    contents[j].addEventListener('touchstart',
-    function (e) {
-      startX=e.targetTouches[0].pageX;
-      startY=e.targetTouches[0].pageY;
-    });
-    contents[j].addEventListener('touchend',
-    function (e) {
-      if(e.changedTouches[0].pageX-startX>50||e.changedTouches[0].pageY-startY>50){
-        divChanges(timechange);
-        clearInterval(timer);
-        timer=setInterval(startAChange,timespace);
-      }
-    });
   }
 }
 
@@ -82,6 +84,7 @@ function divChanges(time){
     }
   }
 }
+
 
 var timer=setInterval(startAChange,timespace);
 
