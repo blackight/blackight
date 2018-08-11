@@ -1,7 +1,15 @@
 module.exports = {
-  entry:  "./app/js.js",
+  entry:  "./app/src.js",
   output: {
     path: __dirname + "/public",
     filename: "main.js"
+  },
+  module : {
+    rules:[
+      {
+        test:/\.css$/,
+        use:["style-loader","css-loader"]
+      }
+    ]
   }
 }
